@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.11.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-unused-imports": "^3.0.0",
     "next": "14.0.1",
     "prettier": "^3.0.3",
     "react": "^18",
