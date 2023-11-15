@@ -36,3 +36,10 @@ button  {
 .scrollbar-hidden::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera*/
 }
+button, input {
+    background-color: transparent;
+    border: none;
+}
+button {
+    cursor: pointer;
+}
