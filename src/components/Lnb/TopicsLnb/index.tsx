@@ -10,13 +10,14 @@ const TopicsLnb = () => {
     () => getTopics({ perPage: 30 }),
     {},
   );
+
   console.log("@@ data", data);
   return (
     <Container>
       <BaseLinks>
-        <NavMenu href="/">Editorial</NavMenu>
-        <NavMenu href="/">Following</NavMenu>
-        <NavMenu href="/">Unsplash</NavMenu>
+        <NavLink href="/">Editorial</NavLink>
+        <NavLink href="/following">following</NavLink>
+        <NavLink href="/plus/new">Unsplash</NavLink>
       </BaseLinks>
       <Divider />
       {data && <ScrollMenu data={data} />}
@@ -27,19 +28,27 @@ const TopicsLnb = () => {
 const Container = styled.div`
   display: flex;
   align-items: center;
-  gap: 24px;
+  padding: 0 20px;
 `;
+
 const Divider = styled.div`
   width: 1px;
-  height: 18px;
+  height: 32px;
+  background: #d1d1d1;
   margin: 0 24px;
-  background-color: #d1d1d1;
 `;
+
 const BaseLinks = styled.div`
   display: flex;
   align-items: center;
   gap: 24px;
 `;
-const NavMenu = styled(Link)``;
+
+const NavLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  height: 56px;
+  font-size: 14px;
+`;
 
 export default TopicsLnb;

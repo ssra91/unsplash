@@ -28,6 +28,7 @@ const ScrollMenu = ({ data }: Props) => {
 };
 
 const Container = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -36,6 +37,11 @@ const Container = styled.div`
     align-items: center;
     gap: 24px;
     overflow-x: auto;
+    a {
+      display: flex;
+      align-items: center;
+      height: 56px;
+    }
   }
 `;
 

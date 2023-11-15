@@ -1,4 +1,3 @@
-import { BASE_API_URL } from "@/src/constants";
 import { httpClient } from "@/src/api/request";
 import { TTopicsItem } from "@/src/models/topics";
 
@@ -14,7 +13,7 @@ export const getTopics = async ({
 }: GetTopicsParams = {}) => {
   const res = await httpClient<TTopicsItem[]>({
     method: "GET",
-    url: `${BASE_API_URL}/topics`,
+    url: `/topics`,
     params: {
       page,
       per_page: perPage,
