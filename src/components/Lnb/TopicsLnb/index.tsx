@@ -7,7 +7,7 @@ import ScrollMenu from "@/src/components/ScrollMenu";
 const TopicsLnb = () => {
   const { data, isLoading, isError } = useQuery(
     ["topics"],
-    () => getTopics(),
+    () => getTopics({ perPage: 30 }),
     {},
   );
   console.log("@@ data", data);
