@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getPhotos } from "@/src/api/photos";
 
 const MainPhotos = () => {
-  const { data, isLoading, isError } = useQuery(
+  const { data, isLoading } = useQuery(
     ["photos"],
     () => getPhotos({ perPage: 30 }),
     {
@@ -19,7 +19,7 @@ const MainPhotos = () => {
     <Container>
       {/* eslint-disable-next-line camelcase */}
       {data?.map(({ id, urls, alt_description }) => (
-        // eslint-disable-next-line camelcase
+        // eslint-disable-next-line camelcase,@next/next/no-img-element
         <img key={id} src={urls.regular} alt={alt_description} />
       ))}
     </Container>

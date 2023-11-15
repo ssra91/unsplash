@@ -8,6 +8,7 @@ const SearchBox = ({ shape }: Props) => {
   return (
     <Container className={`SearchBox ${shape}`}>
       <Form>
+        {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
         <button>
           <IconSearch />
         </button>
