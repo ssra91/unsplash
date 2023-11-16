@@ -16,8 +16,7 @@ const SearchBox = ({ shape }: Props) => {
   const handleSubmit = (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!value) {
-      // eslint-disable-next-line no-alert
-      alert("검색어를 입렵해주세요.");
+      alert("검색어를 입력해주세요.");
       return;
     }
     router.push(`/search/photos/${value}`);

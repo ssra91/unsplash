@@ -5,28 +5,39 @@ interface Props {
   data: TPhotoItem[];
 }
 const PhotosList = ({ data }: Props) => {
+  const photosGroups: TPhotoItem[][] = [[], [], []];
+  const photoGroupHeight = [0, 0, 0];
+
+  for (let i = 0; i < data.length; i++) {
+    const photoItem = data[i];
+    const minValue = Math.min(...photoGroupHeight);
+    const minHeightIndex = photoGroupHeight.indexOf(minValue);
+    photosGroups[minHeightIndex].push(photoItem);
+    photoGroupHeight[minHeightIndex] += photoItem.height / photoItem.width;
+  }
+
   return (
     <Container>
-      {/* eslint-disable-next-line camelcase */}
-      {data?.map(({ id, urls, alt_description }) => (
-        // eslint-disable-next-line camelcase,@next/next/no-img-element
-        <img key={id} src={urls.regular} alt={alt_description} />
+      {photosGroups.map((group, groupIndex) => (
+        <div key={groupIndex}>
+          {group.map(({ id, urls, alt_description }) => (
+            <img key={id} src={urls.regular} alt={alt_description} />
+          ))}
+        </div>
       ))}
     </Container>
   );
 };
 
 const Container = styled.div`
-  padding-top: 50px;
+  padding-top: 60px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
   img {
     width: 100%;
-    height: 300px;
     object-fit: cover;
+    margin-bottom: 20px;
   }
 `;
 

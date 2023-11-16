@@ -1,8 +1,12 @@
 import styled from "@emotion/styled";
-import { useRouter } from "next/router";
 import ScrollMenu from "@/src/components/ScrollMenu";
+import { useRouter } from "next/router";
 
-const SearchHeader = () => {
+interface Props {
+  query: string;
+}
+
+const SearchHeader = ({ query }: Props) => {
   const router = useRouter();
 
   return (
