@@ -13,6 +13,7 @@ module.exports = {
   ],
   parser: "@typescript-eslint/parser",
   rules: {
+    "no-unsafe-optional-chaining": "off",
     "jsx-a11y/control-has-associated-label": "off",
     "import/no-unresolved": "off",
     "import/no-named-as-default": "off",

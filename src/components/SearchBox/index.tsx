@@ -1,18 +1,34 @@
 import styled from "@emotion/styled";
 import { IconSearch } from "@/src/icons";
+import { ChangeEvent, useState } from "react";
+import { useRouter } from "next/router";
 
 interface Props {
   shape?: "round" | "square";
 }
 const SearchBox = ({ shape }: Props) => {
+  const [value, setValue] = useState("");
+  const router = useRouter();
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
+  };
+
+  const handleSubmit = (e: ChangeEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    router.push(`/search/photos/${value}`);
+  };
+
   return (
     <Container className={`SearchBox ${shape}`}>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
-        <button>
+        <button type="submit">
           <IconSearch />
         </button>
-        <input placeholder="Search high-resolution images" />
+        <input
+          placeholder="Search high-resolution images"
+          onChange={handleChange}
+        />
       </Form>
     </Container>
   );
