@@ -15,6 +15,10 @@ const SearchBox = ({ shape }: Props) => {
 
   const handleSubmit = (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!value) {
+      alert("검색어를 입렵해주세요.");
+      return;
+    }
     router.push(`/search/photos/${value}`);
   };
 
