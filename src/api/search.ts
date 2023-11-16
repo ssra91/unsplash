@@ -3,14 +3,16 @@ import { SearchPhotosResponse } from "@/src/models/search";
 
 interface SearchParams {
   query: string;
+  perPage: number;
 }
-export const searchPhotos = async ({ query }: SearchParams) => {
+export const searchPhotos = async ({ query, perPage }: SearchParams) => {
   if (!query) return;
   const res = await httpClient<SearchPhotosResponse>({
     method: "GET",
     url: `/search/photos`,
     params: {
       query,
+      perPage,
     },
   });
   console.log("@@ res", res);

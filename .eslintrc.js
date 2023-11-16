@@ -13,6 +13,12 @@ module.exports = {
   ],
   parser: "@typescript-eslint/parser",
   rules: {
+    "react/no-array-index-key": "off",
+    "no-plusplus": "off",
+    "@next/next/no-img-element": "off",
+    "react/jsx-key": "off",
+    camelcase: "off",
+    "no-alert": "off",
     "no-empty-pattern": "off",
     "consistent-return": "off",
     "no-unsafe-optional-chaining": "off",

@@ -11,7 +11,7 @@ const SearchPhotos = () => {
   const query = (router.query.keyword as string) || "";
   const { data } = useQuery(
     ["searchPhotos", query],
-    () => searchPhotos({ query }),
+    () => searchPhotos({ query, perPage: 30 }),
     {
       staleTime: 1000 * 60 * 30,
       enabled: !!query,
@@ -24,7 +24,7 @@ const SearchPhotos = () => {
   return (
     <Container>
       <ContentContainer>
-        <SearchHeader />
+        <SearchHeader query={query} />
         <PhotosList data={data?.results ?? []} />
       </ContentContainer>
     </Container>

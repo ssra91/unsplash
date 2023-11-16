@@ -1,13 +1,22 @@
 import styled from "@emotion/styled";
-import { useRouter } from "next/router";
 import ScrollMenu from "@/src/components/ScrollMenu";
+import { useQuery } from "@tanstack/react-query";
+import { searchAll } from "@/src/api/search";
 
-const SearchHeader = () => {
-  const router = useRouter();
+interface Props {
+  query: string;
+}
+
+const SearchHeader = ({ query }: Props) => {
+  const { data } = useQuery(
+    ["searchAll", query],
+    () => searchAll({ query }),
+    {},
+  );
 
   return (
     <Container>
-      <h1>{router.query.keyword}</h1>
+      <h1>{query}</h1>
       <ScrollMenu data={[]} />
     </Container>
   );
