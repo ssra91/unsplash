@@ -3,6 +3,7 @@ import TopicsLnb from "@/src/components/Lnb/TopicsLnb";
 import SearchLnb from "@/src/components/Lnb/SearchLnb";
 import Header from "@/src/components/Header";
 import { useRouter } from "next/router";
+import React from "react";
 
 interface Props {
   children: React.ReactNode;
