@@ -1,9 +1,12 @@
 import styled from "@emotion/styled";
-import { useRouter } from "next/router";
+import SearchPhotos from "@/src/views/Search/SearchPhotos";
 
 const SearchPhotosPage = () => {
-  const router = useRouter();
-  return <Container>{router.query.keyword}</Container>;
+  return (
+    <Container>
+      <SearchPhotos />
+    </Container>
+  );
 };
 
 const Container = styled.div``;

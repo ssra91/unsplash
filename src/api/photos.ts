@@ -1,4 +1,4 @@
-import { httpClient } from "@/src/api/request";
+import { httpClient } from "@/src/api/httpClient";
 import { TPhotoItem } from "@/src/models/photos";
 
 interface GetPhotosParams {

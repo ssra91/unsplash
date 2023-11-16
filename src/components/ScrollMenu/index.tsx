@@ -60,7 +60,7 @@ const ScrollMenu = ({ data }: Props) => {
       <ul className="scrollbar-hidden" ref={scrollRef} onScroll={handleScroll}>
         {data.map(({ id, title, slug }) => (
           <li key={id}>
-            <NavLink href={`topics/${slug}`}>{title}</NavLink>
+            <NavLink href={`/topics/${slug}`}>{title}</NavLink>
           </li>
         ))}
       </ul>

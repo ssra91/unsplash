@@ -1,8 +1,6 @@
 import "../styles/reset.css";
 import { AppProps } from "next/app";
-import Header from "@/src/components/Header";
 import styled from "@emotion/styled";
-import TopicsLnb from "@/src/components/Lnb/TopicsLnb";
 
 import { useState } from "react";
 import {
@@ -10,6 +8,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
+import Layout from "@/src/components/Layout";
 
 export default function App({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(
@@ -28,9 +27,9 @@ export default function App({ Component, pageProps }: AppProps) {
     <Container>
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps.dehydratedState}>
-          <Header />
-          <TopicsLnb />
-          <Component {...pageProps} />
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
         </Hydrate>
       </QueryClientProvider>
     </Container>

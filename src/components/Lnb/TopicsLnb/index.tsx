@@ -12,6 +12,8 @@ const TopicsLnb = () => {
   );
 
   console.log("@@ data", data);
+  if (isLoading) return <p>로딩중!!</p>;
+  if (isError) return <p>에러!!</p>;
   return (
     <Container>
       <BaseLinks>
