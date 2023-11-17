@@ -13,6 +13,8 @@ module.exports = {
   ],
   parser: "@typescript-eslint/parser",
   rules: {
+    "react-hooks/exhaustive-deps": "off",
+    "no-undef": "off",
     "react/no-array-index-key": "off",
     "no-plusplus": "off",
     "@next/next/no-img-element": "off",
