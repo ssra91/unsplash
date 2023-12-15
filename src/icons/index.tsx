@@ -51,6 +51,7 @@ export const IconChevronRight = () => (
     viewBox="0 0 24 24"
     version="1.1"
     aria-hidden="false"
+    fill="currentColor"
   >
     <desc lang="en-US">Chevron right</desc>
     <path d="M8.5 5.5 10 4l8 8-8 8-1.5-1.5L15 12 8.5 5.5Z" />
@@ -64,6 +65,7 @@ export const IconChevronLeft = () => (
     viewBox="0 0 24 24"
     version="1.1"
     aria-hidden="false"
+    fill="currentColor"
   >
     <desc lang="en-US">Chevron left</desc>
     <path d="M15.5 18.5 14 20l-8-8 8-8 1.5 1.5L9 12l6.5 6.5Z" />
@@ -78,8 +80,24 @@ export const IconBars = () => (
     viewBox="0 0 24 24"
     version="1.1"
     aria-hidden="false"
+    fill="currentColor"
   >
     <desc lang="en-US">navigation menu</desc>
     <path d="M3 16h18v2H3v-2ZM3 6v2h18V6H3Zm0 7h18v-2H3v2Z" />
+  </svg>
+);
+
+export const IconX = () => (
+  <svg
+    className="FsJPV"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    version="1.1"
+    aria-hidden="false"
+    fill="currentColor"
+  >
+    <desc lang="en-US">An X shape</desc>
+    <path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z" />
   </svg>
 );

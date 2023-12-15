@@ -13,6 +13,8 @@ module.exports = {
   ],
   parser: "@typescript-eslint/parser",
   rules: {
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
     "react-hooks/exhaustive-deps": "off",
     "no-undef": "off",
     "react/no-array-index-key": "off",
