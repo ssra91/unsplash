@@ -1,27 +1,23 @@
 import styled from "@emotion/styled";
-import { useModal } from "@/src/components/Modal/ModalProvider";
+import { useQuery } from "@tanstack/react-query";
+import { getPhotosId } from "@/src/api/photos";
+import Dot from "@/src/components/Dot";
+import PhotosRelated from "@/src/views/PhotoDetail/components/PhotosRelated";
 
 interface Props {
   id: string;
 }
-
-const InnerModal = () => {
-  const { closeModal } = useModal();
-  return <div onClick={closeModal}>내부모달</div>;
-};
 const PhotoDetail = ({ id }: Props) => {
-  const { openModal, closeModal } = useModal();
-  const handleInnerModalOpen = () => {
-    openModal(<InnerModal />);
-  };
+  const { data, isLoading } = useQuery(["photos", id], () => getPhotosId(id), {
+    cacheTime: 1000 * 60 * 30,
+    staleTime: 1000 * 60 * 30,
+  });
+
+  if (isLoading) return <Dot type="absolute" />;
   return (
     <Container>
-      {id}
-      PhotoDetail
-      <button onClick={handleInnerModalOpen}>내부팝업</button>
-      <div className="btn-close" onClick={closeModal}>
-        X
-      </div>
+      <img src={data?.urls.regular} alt={data?.alt_description} />
+      <PhotosRelated id={id} />
     </Container>
   );
 };
