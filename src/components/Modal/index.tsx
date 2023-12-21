@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { ReactElement } from "react";
 import { IconX } from "@/src/icons";
+// eslint-disable-next-line import/no-cycle
 import { useModal } from "@/src/components/Modal/ModalProvider";
 
 interface Props {
@@ -14,7 +15,11 @@ const ModalLayout = ({ children }: Props) => {
         <ButtonModalClose onClick={closeModal}>
           <IconX />
         </ButtonModalClose>
-        <ModalContent>{children}</ModalContent>
+        <div>
+          <ModalContent>
+            <ContentInner>{children}</ContentInner>
+          </ModalContent>
+        </div>
         <Screen onClick={closeModal} />
       </ModalContainer>
     </Container>
@@ -32,15 +37,14 @@ const Container = styled.div`
 
 const ModalContainer = styled.div`
   position: relative;
-  z-index: 10
   display: flex;
   width: 100%;
   height: 100%;
   overflow: scroll;
-  padding: 30px 120px 100px;
+  padding: 30px 120px 0;
 `;
 const Screen = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -51,12 +55,16 @@ const Screen = styled.div`
 
 const ModalContent = styled.div`
   position: relative;
+  z-index: 10;
   width: 100%;
   min-height: 100%;
+  padding-bottom: 100px;
+`;
+
+const ContentInner = styled.div`
   padding: 30px;
   border-radius: 9px;
   background-color: #fff;
-  z-index: 10;
 `;
 
 const ButtonModalClose = styled.div`
@@ -66,6 +74,6 @@ const ButtonModalClose = styled.div`
   padding: 12px;
   color: #fff;
   cursor: pointer;
-  z-index: 10;
+  z-index: 100;
 `;
 export default ModalLayout;
