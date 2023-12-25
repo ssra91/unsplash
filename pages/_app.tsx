@@ -10,6 +10,7 @@ import {
 } from "@tanstack/react-query";
 import Layout from "@/src/components/Layout";
 import { ModalProvider } from "@/src/components/Modal/ModalProvider";
+import LayerContainer from "@/src/components/LayerContainer";
 
 export default function App({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(
@@ -33,6 +34,7 @@ export default function App({ Component, pageProps }: AppProps) {
               <Component {...pageProps} />
             </Layout>
           </ModalProvider>
+          <LayerContainer />
         </Hydrate>
       </QueryClientProvider>
     </Container>
