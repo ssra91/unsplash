@@ -26,7 +26,7 @@ const PhotosList = ({ data }: Props) => {
           {group.map(({ id, urls, alt_description }) => (
             <div
               // href={router.pathname}
-              // as={`/photos/${id}`}
+              // as={`/[category]/${id}`}
               key={id}
               onClick={() => handlePhotoClick(id)}
             >
