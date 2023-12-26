@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import { useQuery } from "@tanstack/react-query";
 import { getRelatedPhotos } from "@/src/api/photos";
-// eslint-disable-next-line import/no-cycle
 import PhotoList from "@/src/components/PhotoList";
 import Dot from "@/src/components/Dot";
 

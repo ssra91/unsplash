@@ -2,19 +2,22 @@ import styled from "@emotion/styled";
 import cn from "classnames";
 import { IToastProps, ToastType } from "@/src/hooks/useToasts";
 import { useEffect, useState } from "react";
+import {
+  MdErrorOutline,
+  MdCheckCircleOutline,
+  MdOutlineWarningAmber,
+} from "react-icons/md";
 
 const getToastIcon = (type?: ToastType) => {
   switch (type) {
     case "success":
-      return "si";
+      return <MdCheckCircleOutline />;
     case "error":
-      return "ei";
+      return <MdErrorOutline />;
     case "warning":
-      return "wi";
-    case "info":
-      return "ii";
+      return <MdOutlineWarningAmber />;
     default:
-      return "di";
+      return null;
   }
 };
 
@@ -43,7 +46,7 @@ const Toast = ({
       })}
       {...props}
     >
-      {icon && <div className="toast-icon">icon</div>}
+      {icon && <div className="toast-icon">{icon}</div>}
       <div className="toast-message">{message}</div>
     </Container>
   );
@@ -59,20 +62,36 @@ const Container = styled.div`
   padding: 0 10px;
   background-color: #fff;
   border-radius: 100px;
+  border: 1px solid #eee;
   min-width: 200px;
   transform: translate(-50%, 100px);
   opacity: 0;
   transition: 0.25s;
+
+  &.success {
+    color: #18f;
+  }
+
+  &.error {
+    color: #ff5252;
+  }
+
+  &.waring {
+    color: #f6e49b;
+  }
+
   &.is-active {
     transform: translate(-50%, 0);
     opacity: 1;
   }
+
   .toast-icon {
     padding: 0 8px;
     width: 30px;
+    display: flex;
   }
+
   .toast-message {
-    padding: 0 8px;
     font-size: 14px;
   }
 `;

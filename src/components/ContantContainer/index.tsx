@@ -9,6 +9,7 @@ const ContentContainer = ({ children }: Props) => {
 };
 
 const Container = styled.div`
+  position: relative;
   max-width: 1200px;
   margin: 0 auto;
 `;
