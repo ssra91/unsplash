@@ -15,7 +15,7 @@ const Layout = ({ children }: Props) => {
     <Container>
       <Header />
       {(pathname === "/" || pathname === "/topics/[slug]") && <TopicsLnb />}
-      {pathname === "/search/photos/[keyword]" && <SearchLnb />}
+      {pathname === "/search/[category]/[keyword]" && <SearchLnb />}
       {children}
     </Container>
   );

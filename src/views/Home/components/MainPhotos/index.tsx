@@ -13,11 +13,11 @@ import Dot from "@/src/components/Dot";
 const MainPhotos = () => {
   const { openDialog, closeDialog } = useDialog();
   const router = useRouter();
-  // const [photos, setPhotos] = useState<TPhotoItem[]>([]);
+  // const [[category], setPhotos] = useState<TPhotoItem[]>([]);
   // const [page, setPage] = useState(1);
 
   // const { data = [] } = useQuery(
-  //   ["photos", page],
+  //   ["[category]", page],
   //   () => getPhotos({ page, perPage: 10 }),
   //   {
   //     staleTime: 1000 * 60 * 30,
@@ -41,7 +41,7 @@ const MainPhotos = () => {
   //   setPage(page + 1);
   // };
   // useEffect(() => {
-  //   setPhotos([...photos, ...data]);
+  //   setPhotos([...[category], ...data]);
   // }, [data]);
 
   useEffect(() => {
@@ -75,8 +75,8 @@ const MainPhotos = () => {
             length={photos.length}
           >
             <PhotosList data={photos} />
-            {/* <MainInfiniteScroll onNext={handleNext} length={photos.length}> */}
-            {/*  <PhotosList data={photos} /> */}
+            {/* <MainInfiniteScroll onNext={handleNext} length={[category].length}> */}
+            {/*  <PhotosList data={[category]} /> */}
           </MainInfiniteScroll>
         )}
         {/* <MainInfiniteScroll onNext={handleNext} length={0}> */}

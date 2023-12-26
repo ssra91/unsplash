@@ -13,6 +13,7 @@ module.exports = {
   ],
   parser: "@typescript-eslint/parser",
   rules: {
+    "func-names": "off",
     "import/no-cycle": "off",
     "jsx-a11y/no-static-element-interactions": "off",
     "jsx-a11y/click-events-have-key-events": "off",
