@@ -18,7 +18,7 @@ const PhotosRelated = ({ id }: Props) => {
   );
   console.log("@@ RELATED-data", data);
 
-  if (isLoading) return <Dot />;
+  if (!data || isLoading) return <Dot />;
   return (
     <Container>
       <PhotoList data={data?.results} />
