@@ -1,3 +1,6 @@
+export interface TPhotoRelated {
+  results: TPhotoItem[];
+}
 export interface TPhotoItem {
   id: string;
   slug: string;

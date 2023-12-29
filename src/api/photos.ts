@@ -1,5 +1,5 @@
 import { httpClient } from "@/src/api/httpClient";
-import { TPhotoItem } from "@/src/models/photos";
+import { TPhotoItem, TPhotoRelated } from "@/src/models/photos";
 
 interface GetPhotosParams {
   orderBy?: "latest" | "oldest" | "popular";
@@ -33,7 +33,7 @@ export const getPhotosId = async (id: string) => {
 };
 
 export const getRelatedPhotos = async (id: string) => {
-  const res = await httpClient<TPhotoItem[]>({
+  const res = await httpClient<TPhotoRelated>({
     method: "GET",
     url: `/photos/${id}/related`,
   });
