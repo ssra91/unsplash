@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 interface Props {
   children: React.ReactNode;
@@ -18,7 +18,7 @@ const MainInfiniteScroll = ({ children, length, onNext }: Props) => {
   useEffect(() => {
     // early return
     if (detectorRef.current === null) return;
-    const callback: IntersectionObserverCallback = (nodes, observer) => {
+    const callback: IntersectionObserverCallback = (nodes) => {
       nodes.forEach((entry) => {
         if (entry.isIntersecting && length > 0) {
           onNext();

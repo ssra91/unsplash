@@ -10,6 +10,7 @@ import { usePreventBodyScroll } from "@/src/hooks/usePreventBodyScroll";
 import { useRouter } from "next/router";
 
 interface ContextProps {
+  // eslint-disable-next-line unused-imports/no-unused-vars
   openModal: (el: ReactElement) => void;
   closeModal: () => void;
 }
