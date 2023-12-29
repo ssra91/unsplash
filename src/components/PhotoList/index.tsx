@@ -47,6 +47,7 @@ const Container = styled.div`
     width: 100%;
     object-fit: cover;
     margin-bottom: 20px;
+    cursor: pointer;
   }
 `;
 
