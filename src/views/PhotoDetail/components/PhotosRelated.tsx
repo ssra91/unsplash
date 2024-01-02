@@ -21,11 +21,18 @@ const PhotosRelated = ({ id }: Props) => {
   if (!data || isLoading) return <Dot />;
   return (
     <Container>
+      <h2>Related Photos</h2>
       <PhotoList data={data?.results} />
     </Container>
   );
 };
 
-const Container = styled.div``;
+const Container = styled.div`
+  h2 {
+    margin-bottom: 24px;
+    font-size: 24px;
+    font-weight: 700;
+  }
+`;
 
 export default PhotosRelated;

@@ -16,8 +16,12 @@ const PhotoDetail = ({ id }: Props) => {
   if (isLoading) return <Dot type="absolute" />;
   return (
     <Container>
-      <img src={data?.urls.regular} alt={data?.alt_description} />
-      <PhotosRelated id={id} />
+      <DetailContainer>
+        <DetailImage>
+          <img src={data?.urls.regular} alt={data?.alt_description} />
+        </DetailImage>
+        <PhotosRelated id={id} />
+      </DetailContainer>
     </Container>
   );
 };
@@ -31,5 +35,13 @@ const Container = styled.div`
     cursor: pointer;
   }
 `;
+const DetailContainer = styled.div`
+  display: flex;
+  gap: 100px;
+  flex-direction: column;
+`;
 
+const DetailImage = styled.div`
+  margin: 0 auto;
+`;
 export default PhotoDetail;
