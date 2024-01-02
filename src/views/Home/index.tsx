@@ -11,7 +11,7 @@ const Home = () => {
   const { openDialog, closeDialog } = useDialog();
   useEffect(() => {
     openDialog({
-      title: " 문제가 발생하였어요.",
+      title: "테스트입니다.",
       description: "필수 항목이 누락되어\n 진행 할 수 없습니다.",
       confirmText: "확인",
       cancelText: "고객센터",

@@ -6,7 +6,6 @@ import MainInfiniteScroll from "@/src/views/Home/components/MainPhotos/MainInfin
 import PhotosList from "@/src/components/PhotoList";
 import { TPhotoItem } from "@/src/models/photos";
 import { useDialog } from "@/src/hooks/useDialogs";
-import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Dot from "@/src/components/Dot";
 
@@ -44,23 +43,23 @@ const MainPhotos = () => {
   //   setPhotos([...[category], ...data]);
   // }, [data]);
 
-  useEffect(() => {
-    if (!isError) return;
-    openDialog({
-      title: " 문제가 발생하였어요.",
-      description: "필수 항목이 누락되어\n 진행 할 수 없습니다.",
-      confirmText: "다시시도",
-      cancelText: "고객센터",
-      onConfirm: () => {
-        refetch();
-        closeDialog();
-      },
-      onCancel: () => {
-        router.push("/cs");
-        closeDialog();
-      },
-    });
-  }, [isError]);
+  // useEffect(() => {
+  //   if (!isError) return;
+  //   openDialog({
+  //     title: " 문제가 발생하였어요.",
+  //     description: "필수 항목이 누락되어\n 진행 할 수 없습니다.",
+  //     confirmText: "다시시도",
+  //     cancelText: "고객센터",
+  //     onConfirm: () => {
+  //       refetch();
+  //       closeDialog();
+  //     },
+  //     onCancel: () => {
+  //       router.push("/cs");
+  //       closeDialog();
+  //     },
+  //   });
+  // }, [isError]);
 
   if (photos?.length === 0) return <p>데이터가 존재하지 않습니다.</p>;
 
