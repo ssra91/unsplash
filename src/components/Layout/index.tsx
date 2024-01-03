@@ -21,6 +21,8 @@ const Layout = ({ children }: Props) => {
   );
 };
 
-const Container = styled.div``;
+const Container = styled.div`
+  width: 100vh;
+`;
 
 export default Layout;
