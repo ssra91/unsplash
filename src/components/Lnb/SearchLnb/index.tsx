@@ -17,7 +17,7 @@ const LNB_ITEMS: { name: string; icon: IIconType; label: string }[] = [
   },
   {
     name: "users",
-    icon: "bell",
+    icon: "users",
     label: "Users",
   },
 ];
@@ -50,6 +50,8 @@ const Container = styled.div`
     gap: 16px;
     .nav-item {
       display: flex;
+      flex-direction: row;
+      gap: 10px;
       align-items: center;
       justify-content: center;
       width: 160px;
@@ -57,7 +59,7 @@ const Container = styled.div`
       font-size: 16px;
       cursor: pointer;
       &.is-active {
-        border-bottom: 1px solid #ddd;
+        //border-bottom: 1px solid #ddd;
       }
     }
   }
