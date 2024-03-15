@@ -12,7 +12,7 @@ const LNB_ITEMS: { name: string; icon: IIconType; label: string }[] = [
   },
   {
     name: "collections",
-    icon: "bell",
+    icon: "collections",
     label: "Collections",
   },
   {
@@ -52,11 +52,12 @@ const Container = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
+      width: 160px;
       height: 50px;
       font-size: 16px;
       cursor: pointer;
       &.is-active {
-        color: blue;
+        border-bottom: 1px solid #ddd;
       }
     }
   }
